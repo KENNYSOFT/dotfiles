@@ -1,0 +1,21 @@
+[user]
+	name = Hyeonmin Park
+	email = hyeonmin.park@kennysoft.kr
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[merge]
+	conflictstyle = zdiff3
+[rerere]
+	enabled = true
+	autoUpdate = true
+[rebase]
+	autostash = true
+[alias]
+	amend-date = !bash -c 'GIT_COMMITTER_DATE=\"$(git log -1 --format=%aD)\" git commit --amend \"$@\"' --
+[url "github.com-original:"]
+	insteadOf = git@github.com:
+[url "git@github.com:opensurvey/"]
+	insteadOf = git@github.com:opensurvey/
